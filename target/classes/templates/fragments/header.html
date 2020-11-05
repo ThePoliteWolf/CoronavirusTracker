@@ -1,0 +1,61 @@
+
+<html th:fragment="header" xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+* {
+	/* font-family: 'Itim', cursive; */
+	/* font-family: 'Merienda One';  */
+	/* font-family: 'Teko', sans-serif;  */
+	/* font-family: 'El Messiri';  */
+	/* font-family: 'Yatra One', cursive; */
+	font-family: 'BioRhyme', serif;
+	word-wrap: break-word
+}
+
+html body {
+	    background-color: #f8f9fa;
+}
+
+</style>
+<title>Covid-19 Tracker</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&display=swap" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/"><h3>Coronavirus Tracker</h3></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+	<div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link" href="/cases">Confirmed</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/death">Deceased</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/recovered">Recovered</a></li>
+			<li class="nav-item active"><a class="nav-link" target="_blank"
+				href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series#time-series-summary-csse_covid_19_time_series">API</a></li>
+		</ul>
+	</div>
+</nav>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#covidTable').DataTable({
+				"aaSorting" : [ [ 2, "desc" ] ],
+				"dom": '<"top"fl<"clear">>rt<"bottom"p<"clear">>'
+			});
+		});
+</script>
+
